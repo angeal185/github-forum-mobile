@@ -881,8 +881,8 @@ const tpl = {
 
     return x('div', {class: 'col-12'},
         x('div', {class: 'card mb-4'},
-          x('div', {class: 'card-body'},
-            x('div', {class: 'media'},
+          x('div', {class: 'card-body text-center'},
+            x('div',
               x('img', {
                 class: 'img-thumbnail mr-4 user-img',
                 src: obj.avatar_url || xdata.app.user_logo,
@@ -890,7 +890,7 @@ const tpl = {
                   evt.target.src = xdata.app.user_logo;
                 }
               }),
-              x('div', {class: 'media-body'},
+              x('div',
                 x('h4', {class: 'mb-4'}, obj.login),
                 x('p', {class: 'user-txt'}, obj.bio || ''),
                 x('p', {class: 'user-txt'}, obj.location || ''),

@@ -1,0 +1,38 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "ben eaves"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "ben eaves"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "cordova-plugin-splashscreen.SplashScreenProxy",
+      "file": "plugins/cordova-plugin-splashscreen/src/windows/SplashScreenProxy.js",
+      "pluginId": "cordova-plugin-splashscreen",
+      "runs": true
+    },
+    {
+      "id": "cordova-plugin-splashscreen.SplashScreen",
+      "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+      "pluginId": "cordova-plugin-splashscreen",
+      "clobbers": [
+        "navigator.splashscreen"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-splashscreen": "6.0.0",
+    "cordova-plugin-whitelist": "1.3.4"
+  }
+}

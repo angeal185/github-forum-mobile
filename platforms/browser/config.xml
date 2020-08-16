@@ -5,7 +5,7 @@
     <author email="beneaves01@hotmail.com" href="angeal185.github.io/github-forum">ben eaves</author>
     <content src="index.html" />
     <access minimum-tls-version="TLSv1.2" origin="https://api.github.com" requires-certificate-transparency="true" requires-forward-secrecy="false" />
-    <access minimum-tls-version="TLSv1.2" origin="https://angeal185.github.io/github-forum/*" requires-certificate-transparency="true" requires-forward-secrecy="false" />
+    <access minimum-tls-version="TLSv1.2" origin="https://angeal185.github.io" requires-certificate-transparency="true" requires-forward-secrecy="false" />
     <allow-intent href="mailto:*" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreenDelay" value="2000" />

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <name>githubForum</name>
+    <description>hybrid mobile app for github-forum</description>
+    <author email="beneaves01@hotmail.com" href="angeal185.github.io/github-forum">ben eaves</author>
+    <content src="index.html" />
+    <access minimum-tls-version="TLSv1.2" origin="https://api.github.com" requires-certificate-transparency="true" requires-forward-secrecy="false" />
+    <access minimum-tls-version="TLSv1.2" origin="https://angeal185.github.io" requires-certificate-transparency="true" requires-forward-secrecy="false" />
+    <allow-intent href="mailto:*" />
+    <icon src="res/ico/windows/storelogo.png" target="StoreLogo" />
+    <icon src="res/ico/windows/smalllogo.png" target="Square30x30Logo" />
+    <icon src="res/ico/windows/Square44x44Logo.png" target="Square44x44Logo" />
+    <icon src="res/ico/windows/Square70x70Logo.png" target="Square70x70Logo" />
+    <icon src="res/ico/windows/Square71x71Logo.png" target="Square71x71Logo" />
+    <icon src="res/ico/windows/Square150x150Logo.png" target="Square150x150Logo" />
+    <icon src="res/ico/windows/Square310x310Logo.png" target="Square310x310Logo" />
+    <splash src="res/screen/windows/splashscreen.png" target="SplashScreen" />
+    <splash src="res/screen/windows/splashscreenphone.png" target="SplashScreenPhone" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="2000" />
+    <preference name="FadeSplashScreenDuration" value="1000" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="SplashScreenBackgroundColor" value="#000" />
+    <preference name="MediaPlaybackRequiresUserAction" value="true" />
+    <preference name="WindowsStoreDisplayName" value="ben eaves" />
+    <preference name="WindowsStorePublisherName" value="ben eaves" />
+</widget>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>githubForum</name>
+    <description>hybrid mobile app for github-forum</description>
+    <author email="beneaves01@hotmail.com" href="angeal185.github.io/github-forum">ben eaves</author>
+    <content src="index.html" />
+    <access minimum-tls-version="TLSv1.2" origin="https://api.github.com" requires-certificate-transparency="true" requires-forward-secrecy="false" />
+    <access minimum-tls-version="TLSv1.2" origin="https://angeal185.github.io" requires-certificate-transparency="true" requires-forward-secrecy="false" />
+    <allow-intent href="mailto:*" />
+    <icon density="ldpi" src="res/ico/android/ldpi.png" />
+    <icon density="mdpi" src="res/ico/android/mdpi.png" />
+    <icon density="hdpi" src="res/ico/android/hdpi.png" />
+    <icon density="xhdpi" src="res/ico/android/xhdpi.png" />
+    <icon density="xxhdpi" src="res/ico/android/xxhdpi.png" />
+    <icon density="xxxhdpi" src="res/ico/android/xxxhdpi.png" />
+    <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />
+    <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
+    <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />
+    <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
+    <splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png" />
+    <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png" />
+    <splash density="land-ldpi" src="res/screen/android/splash-land-ldpi.png" />
+    <splash density="land-mdpi" src="res/screen/android/splash-land-mdpi.png" />
+    <splash density="land-hdpi" src="res/screen/android/splash-land-hdpi.png" />
+    <splash density="land-xhdpi" src="res/screen/android/splash-land-xhdpi.png" />
+    <splash density="land-xxhdpi" src="res/screen/android/splash-land-xxhdpi.png" />
+    <splash density="land-xxxhdpi" src="res/screen/android/splash-land-xxxhdpi.png" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="2000" />
+    <preference name="FadeSplashScreenDuration" value="1000" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="InAppBrowserStorageEnabled" value="true" />
+    <preference name="LogLevel" value="DEBUG" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="SplashShowOnlyFirstTime" value="true" />
+</widget>

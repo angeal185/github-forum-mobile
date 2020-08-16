@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
-    <description>
-        A sample Apache Cordova application that responds to the deviceready event.
-    </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
-    </author>
+    <name>githubForum</name>
+    <description>hybrid mobile app for github-forum</description>
+    <author email="beneaves01@hotmail.com" href="angeal185.github.io/github-forum">ben eaves</author>
     <content src="index.html" />
-    <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
+    <access minimum-tls-version="TLSv1.2" origin="https://api.github.com" requires-certificate-transparency="true" requires-forward-secrecy="false" />
+    <access minimum-tls-version="TLSv1.2" origin="https://angeal185.github.io/github-forum/*" requires-certificate-transparency="true" requires-forward-secrecy="false" />
     <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="2000" />
+    <preference name="FadeSplashScreenDuration" value="1000" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="SplashScreen" value="/app/img/splash.png" />
+    <preference name="SplashScreenBackgroundColor" value="#000" />
+    <preference name="SplashScreenWidth" value="360" />
+    <preference name="SplashScreenHeight" value="480" />
 </widget>

@@ -93,6 +93,8 @@
 body{
   padding-top: 4rem;
   font-family: 'Roboto';
+  font-size: 1rem;
+  margin-bottom: 4rem;
 }
 .app-main{
   margin-top: 3rem;
@@ -191,7 +193,7 @@ body{
 }
 
 .cat-info{
-    text-align: right;
+    text-align: left;
 }
 
 .cat-sub{

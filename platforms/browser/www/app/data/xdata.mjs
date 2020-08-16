@@ -1,39 +1,37 @@
 import { routes } from './routes.mjs';
-import { jsonld } from './jsonld.mjs';
 
 const repo = 'angeal185/github-forum-issues',
 news_repo = 'angeal185/github-forum-news',
 report_repo = 'angeal185/github-forum-report',
 report_repo_issue = '1',
 news_id = 142029577,
-issues_feed = 'https://angeal185.github.io/github-forum/atom/issues.atom',
-news_feed = 'https://angeal185.github.io/github-forum/atom/news.atom';
+origin = 'https://angeal185.github.io/github-forum',
+api = origin +'/api',
+issues_feed = origin +'/atom/issues.atom',
+news_feed = origin +'/atom/news.atom';
 
 const xdata = Object.assign({
   default:{
     version: '1.0.0', // don't delete me
     title: 'github forum',
     logo: './app/img/logo.png',
-    origin: 'http://localhost:8000',
+    origin: origin,
     params: true,
     error: '/error',
-    base_path: '/forum',
+    base_path: '/portal',
     delete_meta: false,
     webmanifest: './app/manifest.webmanifest',
     base_script_name: 'main',
-    csp: "default-src 'self';img-src *;object-src 'none';frame-src 'none';block-all-mixed-content;upgrade-insecure-requests;connect-src https://api.github.com",
+    csp: "default-src 'self';img-src *;object-src 'none';frame-src 'none';block-all-mixed-content;upgrade-insecure-requests;connect-src https://api.github.com https://angeal185.github.io/github-forum/*",
     meta: [{
       name: 'viewport',
-      content: 'width=device-width, initial-scale=1'
+      content: 'initial-scale=1, width=device-width, viewport-fit=cover'
     },{
-      name: 'msapplication-config',
-      content: './app/browserconfig.xml'
+      name: 'msapplication-tap-highlight',
+      content: 'no'
     },{
-      name: 'apple-mobile-web-app-title',
-      content: 'github-forum'
-    },{
-      name: 'application-name',
-      content: 'github-forum'
+      name: 'format-detection',
+      content: 'telephone=no'
     }],
     styles:[{
       href: './app/css/bootstrap.min.css',
@@ -41,28 +39,9 @@ const xdata = Object.assign({
     },{
       href: './app/css/main.min.css',
       rel: 'stylesheet'
-    },{
-      rel: 'alternate',
-      type: 'application/atom+xml',
-      title: "github-forum issues feed",
-      href: issues_feed
-    },{
-      rel: 'alternate',
-      type: 'application/atom+xml',
-      title: "github-forum news feed",
-      href: news_feed
-    },{
-      rel: 'apple-touch-icon',
-      href: './app/img/ico/apple-touch-icon.png',
-      sizes: '180x180'
-    },{
-      rel: 'mask-icon',
-      href: './app/img/ico/safari-pinned-tab.svg',
-      color: '#000000'
     }],
     js_head:[],
     js_body:[],
-    jsonLD: jsonld,
     strip_unsafe: ['eval'],
     storage: {
       max_age: 9999999999,
@@ -72,6 +51,16 @@ const xdata = Object.assign({
       download: {
         type: 'text/plain',
         charset: 'utf-8'
+      },
+      json: {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/vnd.github.squirrel-girl-preview',
+          'Content-Type': 'application/json',
+          'Sec-Fetch-Dest': 'object',
+          'Sec-Fetch-mode': 'cors',
+          'Sec-Fetch-Site': 'cross-site'
+        }
       },
       fetch: {
         method: 'GET',
@@ -112,7 +101,7 @@ const xdata = Object.assign({
     }
   },
   app: {
-    api: 'https://api.github.com/',
+    api: api,
     search: 'https://api.github.com/search/',
     forum_id: 142029577,
     user_logo: './app/img/user.png',

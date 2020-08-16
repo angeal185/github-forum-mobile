@@ -8,7 +8,7 @@ const tpl = {
   menu_main(router){
     let nav_left = x('div', {class: 'nav-left col-6 d-flex'},
       x('div', {
-        class: 'nav-lnk icon-bars mr-2 d-lg-none',
+        class: 'nav-lnk icon-bars mr-2',
         onclick(){
           window.dispatchEvent(new Event("toggle-sidebar"));
         }
@@ -19,22 +19,12 @@ const tpl = {
       })
     ),
     nav_right = x('div', {class: 'nav-right col-6'}),
-    nav_sb = x('div', {class: 'nav-sb d-lg-none'},
+    nav_sb = x('div', {class: 'nav-sb'},
       x('div', {class: 'sb-body'})
     ),
-    items = xdata.base.nav,
     sb_items = xdata.base.nav_sb,
     login_status = x('span'), login_event;
 
-    for (let i = 0; i < items.length; i++) {
-      nav_right.append(x('div', {
-        class: 'nav-lnk d-none d-lg-block',
-        onclick(){
-          router.rout('/'+ items[i])
-        }
-      }, items[i]))
-
-    }
 
     nav_sb.firstChild.append(tpl.quick_search(router));
 
@@ -134,10 +124,6 @@ const tpl = {
   menu_mobile(router){
     let item = x('div')
     return item;
-  },
-  //forum
-  sidebar_forum(){
-
   },
   listgroup_forum(cat, res, router){
 
@@ -600,7 +586,7 @@ const tpl = {
   },
   latest(router, sel){
 
-    let item = x('div', {class: 'list-group d-none d-lg-block'},
+    let item = x('div', {class: 'list-group'},
       x('div', {class: 'list-group-item active'},'forum '+ sel)
     )
     utils.getNew(item,router,sel);
@@ -1121,7 +1107,7 @@ const tpl = {
   },
   cat_cloud(router){
     let div = x('div', {class: 'list-group-item'}),
-    item = x('div', {class: 'list-group d-none d-lg-block'},
+    item = x('div', {class: 'list-group'},
       x('div', {class: 'list-group-item active'}, 'Categories'),
       div
     ),
@@ -1140,7 +1126,7 @@ const tpl = {
   },
   tag_cloud(router){
     let div = x('div', {class: 'list-group-item'}),
-    item = x('div', {class: 'list-group d-none d-lg-block'},
+    item = x('div', {class: 'list-group'},
       x('div', {class: 'list-group-item active'}, 'Tag cloud'),
       div
     ),
@@ -1159,31 +1145,35 @@ const tpl = {
   },
   moderators(router){
     let div = x('div', {class: 'list-group-item'}),
-    item = x('div', {class: 'list-group d-none d-lg-block'},
+    item = x('div', {class: 'list-group'},
       x('div', {class: 'list-group-item active'}, 'Moderators'),
       div
     ),
     mods = xdata.app.moderators
 
-    for (let i = 0; i < mods.length; i++) {
-      div.append(x('div', {class: 'media'},
-        x('img', {
-          class: 'mr-3 min-img',
-          src: mods[i].img,
-          onerror(evt){
-            evt.target.src = xdata.app.user_logo;
-          }
-        }),
-        x('div',{class: 'media-body'},
-          x('div', {
-            class: 'cp sh-95',
-            onclick(){
-              router.rout('/forum/user?q='+ mods[i].name, {term: mods[i].name})
+    utils.get(xdata.app.api +'/moderators.json', xdata.default.stream.json, function(err,mods){
+      if(err){return console.error(err)}
+      for (let i = 0; i < mods.length; i++) {
+        div.append(x('div', {class: 'media'},
+          x('img', {
+            class: 'mr-3 min-img',
+            src: mods[i].img,
+            onerror(evt){
+              evt.target.src = xdata.app.user_logo;
             }
-          }, mods[i].name)
-        )
-      ))
-    }
+          }),
+          x('div',{class: 'media-body'},
+            x('div', {
+              class: 'cp sh-95',
+              onclick(){
+                router.rout('/forum/user?q='+ mods[i].name, {term: mods[i].name})
+              }
+            }, mods[i].name)
+          )
+        ))
+      }
+    })
+    
     return item
   },
   bnav_lnks(router){

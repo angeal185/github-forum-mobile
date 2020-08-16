@@ -67,8 +67,6 @@ const xviews = Object.assign({
     return item
   },
   profile(stream, data){
-    try {
-      //body...
 
     let obj = stream.ssGet('userData'),
     tk = stream.ssGet('tk');
@@ -84,39 +82,36 @@ const xviews = Object.assign({
 
     let contrib = x('p', {class: 'user-txt'}),
     authored = x('p', {class: 'user-txt'}),
-    item = x('div', {class: 'row'},
-      x('div', {class: 'col-12'},
-        x('div', {class: 'card mb-4'},
-          x('div', {class: 'card-body'},
-            x('div', {class: 'media'},
-              x('img', {
-                class: 'img-thumbnail mr-4 user-img',
-                src: obj.avatar_url,
-                onerror(evt){
-                  evt.target.src = xdata.app.user_logo;
-                }
-              }),
-              x('div', {class: 'media-body'},
-                x('h4', {class: 'mb-4'}, obj.login),
-                x('p', {class: 'user-txt'}, obj.bio || ''),
-                x('p', {class: 'user-txt'}, obj.location || ''),
-                x('p', {class: 'user-txt'}, obj.blog || ''),
-                contrib, authored
-              )
-            )
+    item = x('div',
+      x('div', {class: 'card mb-4 text-center'},
+        x('div', {class: 'card-body'},
+          x('div', {class: 'mb-2'},
+            x('img', {
+              class: 'img-thumbnail mr-4 user-img',
+              src: obj.avatar_url,
+              onerror(evt){
+                evt.target.src = xdata.app.user_logo;
+              }
+            }),
+          ),
+          x('div',
+            x('h4', {class: 'mb-4'}, obj.login),
+            x('p', {class: 'user-txt'}, obj.bio || ''),
+            x('p', {class: 'user-txt'}, obj.location || ''),
+            x('p', {class: 'user-txt'}, obj.blog || ''),
+            contrib, authored
           )
         )
       ),
-      x('div', {class: 'col-12'},
-        x('div', {class: 'card mb-4'},
-          x('div', {class: 'card-body'},
-            x('div', {class: 'row'},
-              tpl.profile_data(data.items_a, obj),
-              tpl.profile_data(data.items_b, obj)
-            )
+      x('div', {class: 'card mb-4'},
+        x('div', {class: 'card-body'},
+          x('div', {class: 'row'},
+            tpl.profile_data(data.items_a, obj),
+            tpl.profile_data(data.items_b, obj)
           )
         )
       )
+
     )
 
     let cnf = xdata.default.stream.fetch,
@@ -147,9 +142,6 @@ const xviews = Object.assign({
     })
 
     return item;
-  } catch (err) {
-    console.error(err)
-  }
   },
   login(stream, data){
 
@@ -531,7 +523,7 @@ const xviews = Object.assign({
     return item;
   },
   portal(stream, data){
-    return x('div', {class: ''},
+    return x('div',
       tpl.moderators(router),
       tpl.latest(router, 'latest'),
       tpl.latest(router, 'popular'),

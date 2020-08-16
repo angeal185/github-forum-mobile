@@ -1,5 +1,5 @@
-# github-forum
+# github-forum-mobile
 
-a github pages forum that requires no db or extra server
+hybrid mobile app for github-forum
 
-[Demo](https://angeal185.github.io/github-forum)
+[github-forum](https://angeal185.github.io/github-forum)

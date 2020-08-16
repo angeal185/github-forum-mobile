@@ -1149,8 +1149,7 @@ const tpl = {
       x('div', {class: 'list-group-item active'}, 'Moderators'),
       div
     )
-    
-    console.log(xdata.default.stream.json)
+
     utils.get(xdata.app.api +'/moderators.json', xdata.default.stream.json, function(err,mods){
       if(err){return console.error(err)}
       for (let i = 0; i < mods.length; i++) {

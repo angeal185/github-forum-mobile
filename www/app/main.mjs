@@ -20,6 +20,11 @@ const app = {
         if(err){return stream.renderErr();}
       })
     })
+    .on('/portal', function(request, stream){
+      stream.render('portal', request.data, function(err){
+        if(err){return stream.renderErr();}
+      })
+    })
     .on('/profile', function(request, stream){
       if(utils.isAuth(router)){
         stream.render('profile', request.data, function(err){

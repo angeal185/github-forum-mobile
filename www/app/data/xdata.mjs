@@ -17,7 +17,7 @@ const xdata = Object.assign({
     origin: 'http://localhost:8000',
     params: true,
     error: '/error',
-    base_path: '/forum',
+    base_path: '/portal',
     delete_meta: false,
     webmanifest: './app/manifest.webmanifest',
     base_script_name: 'main',

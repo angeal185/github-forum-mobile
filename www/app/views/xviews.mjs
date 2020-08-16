@@ -28,16 +28,6 @@ const xviews = Object.assign({
       tpl.menu_mobile(router),
       x('div', {class: 'app-main container-fluid'},
         x('div', {class: 'app-main row'},
-          x('div', {class: 'col-lg-3'},
-            x('div', {class: 'd-none d-lg-block'},
-              tpl.quick_search(router)
-            ),
-            tpl.moderators(router),
-            tpl.latest(router, 'latest'),
-            tpl.latest(router, 'popular'),
-            tpl.cat_cloud(router),
-            tpl.tag_cloud(router)
-          ),
           app_main
         ),
         tpl.report(),
@@ -539,6 +529,15 @@ const xviews = Object.assign({
     }
 
     return item;
+  },
+  portal(stream, data){
+    return x('div', {class: ''},
+      tpl.moderators(router),
+      tpl.latest(router, 'latest'),
+      tpl.latest(router, 'popular'),
+      tpl.cat_cloud(router),
+      tpl.tag_cloud(router)
+    )
   },
   error(stream, data){
     return x('code', stream.js(data))
